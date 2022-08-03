@@ -1,0 +1,13 @@
+.select_container {
+  display: flex;
+  gap: 2rem;
+}
+
+.select {
+  padding: 0.8rem 2.5rem;
+  border-radius: 25px;
+}
+
+option {
+  padding: 0.8rem 2.5rem;
+}

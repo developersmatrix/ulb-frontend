@@ -1,13 +1,63 @@
-body {
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* ************* */
+/* 
+--Colors
+primary:#17d6ee
+
+--Background colors
+primary:#1e2526
+*/
+/* ************* */
+
+/* ************* */
+/* Basic reset */
+/* ************* */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #ddd;
+  background-color: #131b25;
+  font-family: "Noto Serif Kannada", "Open Sans", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-weight: 400;
+  height: 200vh;
+  position: relative;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a:link,
+a:visited {
+  color: #ddd;
+  text-decoration: none;
+}
+
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* dummy div to cover height of navigation bar  */
+.dummy {
+  width: 100%;
+  height: 6.4rem;
 }

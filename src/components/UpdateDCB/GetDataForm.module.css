@@ -1,0 +1,21 @@
+.title {
+  text-align: center;
+  color: aquamarine;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  gap: 2rem;
+}
+
+.select {
+  padding: 0.5rem 1rem;
+}

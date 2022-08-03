@@ -1,0 +1,37 @@
+.heading__primary {
+  text-align: center;
+  color: aquamarine;
+}
+
+.form__general--info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__general--info div {
+  flex-basis: 32%;
+}
+
+input {
+  padding: 0.4rem 0.8rem;
+}
+
+.submit__button {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.submit__button button {
+  padding: 0.8rem 2.4rem;
+  font-weight: 600;
+  transition: all 200ms ease-in-out;
+}
+
+input[type="number"][disabled] {
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+}

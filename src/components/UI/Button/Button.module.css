@@ -1,0 +1,15 @@
+.button {
+  padding: 0.9rem 2.5rem;
+  background-color: aquamarine;
+  border-radius: 25px;
+  font-weight: 700;
+  letter-spacing: 1.2;
+  color: #1e2526;
+  border: 1px solid aquamarine;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: transparent;
+  color: aquamarine;
+}

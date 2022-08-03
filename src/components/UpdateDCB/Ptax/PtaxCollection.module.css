@@ -1,0 +1,11 @@
+.heading__primary {
+  text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
