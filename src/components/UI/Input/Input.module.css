@@ -1,5 +1,37 @@
-.input__container {
+.input-control {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin: 1rem;
+}
+
+.input-control label {
+  font-weight: bold;
+}
+
+.input-control input,
+.input-control textarea {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid black;
+  font-family: inherit;
+}
+
+.input-control input:focus,
+.input-control textarea:focus {
+  outline: none;
+  background: #ebebeb;
+  border-color: #510077;
+}
+
+.input-control__invalid label,
+.input-control__invalid span {
+  color: red;
+}
+
+.input-control__invalid input,
+.input-control__invalid textarea,
+.input-control__invalid input:focus,
+.input-control__invalid textarea:focus {
+  border-color: red;
+  background: #ffd1d1;
 }

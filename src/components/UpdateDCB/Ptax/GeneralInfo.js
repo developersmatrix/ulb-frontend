@@ -104,6 +104,7 @@ const GeneralInfo = (props) => {
         </h1>
         <div className={styles["form__general--info"]}>
           <Input
+            element={"input"}
             label="Residential Properties"
             type="number"
             id="residential"
@@ -113,6 +114,7 @@ const GeneralInfo = (props) => {
             errorMsg={"wrong"}
           />
           <Input
+            element={"input"}
             label="Commercial Properties"
             type="number"
             id="commercial"
@@ -121,6 +123,7 @@ const GeneralInfo = (props) => {
             disabled={isDisabled}
           />
           <Input
+            element={"input"}
             label="Vacant Properties"
             type="number"
             id="vacant"
@@ -130,6 +133,7 @@ const GeneralInfo = (props) => {
           />
 
           <Input
+            element={"input"}
             label="Total No of properties"
             type="number"
             id="totalnoofproperties"
@@ -138,6 +142,7 @@ const GeneralInfo = (props) => {
           />
 
           <Input
+            element={"input"}
             label="Opening Balance"
             type="number"
             id="openingbalance"
@@ -147,6 +152,7 @@ const GeneralInfo = (props) => {
           />
 
           <Input
+            element={"input"}
             label="Current year Demand"
             type="number"
             id="currentyearDemand"
@@ -156,6 +162,7 @@ const GeneralInfo = (props) => {
           />
 
           <Input
+            element={"input"}
             label="Total Demand"
             type="number"
             id="totalDemand"

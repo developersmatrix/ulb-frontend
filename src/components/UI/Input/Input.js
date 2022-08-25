@@ -1,19 +1,19 @@
-import { useReducer } from "react";
-
+import { useEffect, useReducer } from "react";
+import { validate } from "../../../shared/Util/Validators";
 import styles from "./Input.module.css";
 
-const inputReducer = (state, action) => {
+const InputReducer = (state, action) => {
   switch (action.type) {
     case "CHANGE":
       return {
+        ...state,
         value: action.value,
-        isValid: true,
+        isValid: validate(action.value, action.validators),
         isTouched: true,
       };
     case "TOUCH":
       return {
-        value: action.value,
-        isValid: true,
+        ...state,
         isTouched: true,
       };
     default:
@@ -22,27 +22,69 @@ const inputReducer = (state, action) => {
 };
 
 const Input = (props) => {
-  const [inputState, dispatch] = useReducer(inputReducer, {
-    value: props.value,
-    isValid: false,
+  const [inputState, dispatch] = useReducer(InputReducer, {
+    value: props.initialValue || "",
     isTouched: false,
+    isValid: props.initialValidity || false,
   });
 
   const changeHandler = (event) => {
-    dispatch({ type: "CHANGE", value: event.target.value });
+    dispatch({
+      type: "CHANGE",
+      value: event.target.value,
+      validators: props.validators,
+    });
   };
 
-  return (
-    <div className={`${styles.input__container} ${props.className}`}>
-      <label htmlFor={props.id}>{props.label}</label>
+  const blurHandler = () => {
+    dispatch({
+      type: "TOUCH",
+    });
+  };
+
+  const { id, onInput } = props;
+  const { value, isValid } = inputState;
+
+  useEffect(() => {
+    onInput(id, value, isValid);
+  }, [id, onInput, value, isValid]);
+
+  const element =
+    props.element === "input" ? (
       <input
-        type={props.type}
         id={props.id}
-        value={inputState.value}
-        onChange={changeHandler}
+        type={props.type}
+        placeholder={props.placeholder}
         disabled={props.disabled}
+        onChange={changeHandler}
+        onBlur={blurHandler}
+        value={inputState.value}
       />
-      {!inputState.isValid && <span>{props.errorMsg}</span>}
+    ) : (
+      <textarea
+        id={props.id}
+        rows={props.rows || 3}
+        placeholder={props.placeholder}
+        disabled={props.disabled}
+        onChange={changeHandler}
+        onBlur={blurHandler}
+        value={inputState.value}
+      />
+    );
+
+  const classes = `${styles["input-control"]} ${props.className || ""} ${
+    inputState.isTouched && !inputState.isValid
+      ? styles["input-control__invalid"]
+      : ""
+  }`;
+
+  return (
+    <div className={classes}>
+      <label htmlFor={props.id}>{props.label}</label>
+      {element}
+      {!inputState.isValid && inputState.isTouched && (
+        <span>{props.errorMsg}</span>
+      )}
     </div>
   );
 };
